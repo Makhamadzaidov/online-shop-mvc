@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using OnlineMarket.Data.DbContexts;
+using OnlineMarket.Service.Commons.Helpers;
 using OnlineMarket.Service.Interfaces;
 using OnlineMarket.Service.Mappers;
 using OnlineMarket.Service.Services;
@@ -16,7 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddAutoMapper(typeof(MapperProfile));
-
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -26,10 +27,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+HttpContextHelper.Accessor = app.Services.GetRequiredService<IHttpContextAccessor>();
+
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
