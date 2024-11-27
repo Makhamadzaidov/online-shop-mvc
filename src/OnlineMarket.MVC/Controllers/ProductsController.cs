@@ -16,20 +16,20 @@ namespace OnlineMarket.MVC.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task <IActionResult> CreateAsync(ProductCreationDto product)
+        /*[HttpPost]
+        public async Task<IActionResult> CreateAsync(ProductCreationDto product)
         {
             await _productService.CreateAsync(product);
 
             return RedirectToAction("Index");
-        }
+        }*/
 
-        [HttpGet("GetAllProducts")]
+        /*[HttpGet("GetAllProducts")]
         public async Task<IActionResult> GetAllAsync()
         {
             var products = await _productService.GetAllAsync();
             return Ok(products);
-        }
+        }*/
 
     }
 }

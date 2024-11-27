@@ -15,4 +15,9 @@
     <ProjectReference Include="..\OnlineMarket.Data\OnlineMarket.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commons\Helpers\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
 </Project>

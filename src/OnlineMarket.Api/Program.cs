@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using OnlineMarket.Data.DbContexts;
-using OnlineMarket.Service.Commons.Helpers;
 using OnlineMarket.Service.Interfaces;
 using OnlineMarket.Service.Mappers;
 using OnlineMarket.Service.Services;
@@ -27,7 +26,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-HttpContextHelper.Accessor = app.Services.GetRequiredService<IHttpContextAccessor>();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

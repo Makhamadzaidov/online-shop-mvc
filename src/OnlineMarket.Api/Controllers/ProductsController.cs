@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OnlineMarket.Domain.Entities;
-using OnlineMarket.Service.Commons.Utils;
 using OnlineMarket.Service.DTOs.Products;
 using OnlineMarket.Service.Interfaces;
 using System.Linq.Expressions;
@@ -12,7 +10,7 @@ namespace OnlineMarket.Api.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductService _productService;
+        /*private readonly IProductService _productService;
         public ProductsController(IProductService productService)
         {
             _productService = productService;
@@ -38,7 +36,7 @@ namespace OnlineMarket.Api.Controllers
             var products = await _productService.GetAllAsync(filter, @params);
 
             return Ok(products);
-        }
+        }*/
 
     }
 }
